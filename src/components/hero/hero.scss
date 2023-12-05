@@ -27,6 +27,21 @@
 				font-size: 88px;
 			}
 
+			.buttons {
+				display: flex;
+				gap: 20px;
+
+				button {
+					padding: 20px;
+					border: 1px solid white;
+					border-radius: 10px;
+					background-color: transparent;
+					color: white;
+					font-weight: 300;
+					cursor: pointer;
+				}
+			}
+
 			img {
 				width: 50px;
 			}
@@ -37,5 +52,15 @@
 		position: absolute;
 		top: 4%;
 		right: 12%;
+	}
+
+	.slidingTextContainer {
+		position: absolute;
+		font-size: 50vh;
+		bottom: -120px;
+		white-space: nowrap;
+		color: #ffffff09;
+		width: 50%;
+		font-weight: bold;
 	}
 }
