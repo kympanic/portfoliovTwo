@@ -49,22 +49,45 @@ const experienceDetails = [
 	},
 ];
 
+const variants = {
+	initial: {
+		x: -500,
+		y: 100,
+		opacity: 0,
+	},
+	animate: {
+		x: 0,
+		opacity: 1,
+		y: 0,
+		transition: {
+			duration: 1,
+		},
+	},
+};
+
 const Experience = () => {
 	return (
-		<div className="experience">
-			<div className="titleContainer">
+		<motion.div className="experience">
+			<motion.div className="titleContainer">
 				<p>Life</p>
 				<h1>SUMMARY</h1>
-			</div>
-			<div className="summary">
-				<div>
-					<h1>Education</h1>
+			</motion.div>
+			<motion.div className="summary">
+				<motion.div
+					variants={variants}
+					initial="initial"
+					whileInView="animate"
+				>
+					<motion.h1>Education</motion.h1>
 					{educationDetails.length > 0 &&
 						educationDetails.map((value, index) => (
 							<motion.div
 								key={index}
 								className="items"
 								whileHover={{ scale: 1.1 }}
+								variants={variants}
+								initial="initial"
+								whileInView="animate"
 							>
 								<p>{value.yearRange}</p>
 								<h3>{value.title}</h3>
@@ -72,15 +95,24 @@ const Experience = () => {
 								<p>{value.desc}</p>
 							</motion.div>
 						))}
-				</div>
-				<div>
-					<h1>Experience</h1>
+				</motion.div>
+				<motion.div
+					variants={variants}
+					initial="initial"
+					whileInView="animate"
+				>
+					<motion.h1>Experience</motion.h1>
 					{experienceDetails.length > 0 &&
 						experienceDetails.map((value, index) => (
 							<motion.div
 								key={index}
 								className="otheritems"
-								whileHover={{ scale: 1.1 }}
+								whileHover={{
+									scale: 1.1,
+								}}
+								variants={variants}
+								initial="initial"
+								whileInView="animate"
 							>
 								<p className="badge bg-primary text-2 fw-400">
 									{value.yearRange}
@@ -90,9 +122,9 @@ const Experience = () => {
 								<p>{value.desc}</p>
 							</motion.div>
 						))}
-				</div>
-			</div>
-		</div>
+				</motion.div>
+			</motion.div>
+		</motion.div>
 	);
 };
 
