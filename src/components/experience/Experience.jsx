@@ -3,6 +3,12 @@ import { motion } from "framer-motion";
 
 const educationDetails = [
 	{
+		yearRange: "2023 - 2023",
+		title: "AWS Cloud Practitioner Certificate",
+		place: "AWS",
+		desc: "Earners of this certification have a fundamental understanding of IT services and their uses in the AWS Cloud. They demonstrated cloud fluency and foundational AWS knowledge. Badge owners are able to identify essential AWS services necessary to set up AWS-focused projects.",
+	},
+	{
 		yearRange: "2022 - 2023",
 		title: "Software Engineering",
 		place: "App Academy",
@@ -17,6 +23,12 @@ const educationDetails = [
 ];
 
 const experienceDetails = [
+	{
+		yearRange: "2023 - 2023",
+		title: "Frontend Developer Intern",
+		place: "Gemship",
+		desc: "In my front-end development role, I enhanced website efficiency and user experience. I focused on learning TypeScript to refactor code for reusability, implemented a pagination system for art displays to optimize backend resource usage, redesigned product cards to improve visual appeal and user engagement, and collaborated closely with the lead developer on various weekly tasks.",
+	},
 	{
 		yearRange: "2022 - 2023",
 		title: "Assistant Manager",
@@ -49,26 +61,34 @@ const Experience = () => {
 					<h1>Education</h1>
 					{educationDetails.length > 0 &&
 						educationDetails.map((value, index) => (
-							<div key={index} className="items">
+							<motion.div
+								key={index}
+								className="items"
+								whileHover={{ scale: 1.1 }}
+							>
 								<p>{value.yearRange}</p>
 								<h3>{value.title}</h3>
-								<p>{value.place}</p>
+								<p className="place">{value.place}</p>
 								<p>{value.desc}</p>
-							</div>
+							</motion.div>
 						))}
 				</div>
 				<div>
 					<h1>Experience</h1>
 					{experienceDetails.length > 0 &&
 						experienceDetails.map((value, index) => (
-							<div key={index}>
+							<motion.div
+								key={index}
+								className="otheritems"
+								whileHover={{ scale: 1.1 }}
+							>
 								<p className="badge bg-primary text-2 fw-400">
 									{value.yearRange}
 								</p>
 								<h3>{value.title}</h3>
-								<p>{value.place}</p>
+								<p className="workplace">{value.place}</p>
 								<p>{value.desc}</p>
-							</div>
+							</motion.div>
 						))}
 				</div>
 			</div>
