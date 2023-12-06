@@ -1,0 +1,16 @@
+.experience {
+	background: linear-gradient(180deg, #040d12, #262626);
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	.titleContainer {
+		display: flex;
+		margin-top: 5%;
+		align-items: center;
+		justify-content: center;
+	}
+	.summary {
+		display: flex;
+	}
+}
