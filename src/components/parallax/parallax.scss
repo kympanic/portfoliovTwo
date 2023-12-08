@@ -37,4 +37,13 @@
 		position: absolute;
 		z-index: 6;
 	}
+	.face {
+		background-image: url("/hi.png");
+		background-size: cover;
+		width: 120px;
+		height: 150px;
+		position: absolute;
+		z-index: 999;
+		top: 10%;
+	}
 }
