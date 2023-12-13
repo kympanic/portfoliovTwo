@@ -38,7 +38,10 @@ const sliderVariants = {
 		},
 	},
 };
-
+const handleClick = () => {
+	console.log("GitHub button clicked");
+	window.open("https://github.com/kympanic", "_blank");
+};
 const Hero = () => {
 	return (
 		<div className="hero">
@@ -54,10 +57,20 @@ const Hero = () => {
 						Web developer and CRPG Enthusiast
 					</motion.h1>
 					<motion.div variants={textVariants} className="buttons">
-						<motion.button variants={textVariants}>
-							My Portfolio
+						<motion.button
+							variants={textVariants}
+							onClick={handleClick}
+						>
+							Github
 						</motion.button>
-						<motion.button variants={textVariants}>
+						<motion.button
+							variants={textVariants}
+							onClick={() =>
+								document
+									.getElementById("contact")
+									.scrollIntoView()
+							}
+						>
 							Contact Me
 						</motion.button>
 					</motion.div>
