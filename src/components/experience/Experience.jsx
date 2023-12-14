@@ -77,6 +77,7 @@ const Experience = () => {
 					variants={variants}
 					initial="initial"
 					whileInView="animate"
+					className="education"
 				>
 					<motion.h1>Education</motion.h1>
 					{educationDetails.length > 0 &&
@@ -114,9 +115,7 @@ const Experience = () => {
 								initial="initial"
 								whileInView="animate"
 							>
-								<p className="badge bg-primary text-2 fw-400">
-									{value.yearRange}
-								</p>
+								<p className="expYear">{value.yearRange}</p>
 								<h3>{value.title}</h3>
 								<p className="workplace">{value.place}</p>
 								<p>{value.desc}</p>

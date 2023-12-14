@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .sidebar {
 	display: flex;
 	flex-direction: column;
@@ -5,7 +7,9 @@
 	justify-content: center;
 	background-color: white;
 	color: black;
-
+	@include mobile {
+		display: none;
+	}
 	.bg {
 		z-index: 999;
 		position: fixed;
