@@ -49,7 +49,6 @@ const Single = ({ item }) => {
 
 	const { scrollYProgress } = useScroll({
 		target: ref,
-		// offset: ["start start", "end start"],
 	});
 
 	const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
@@ -68,13 +67,7 @@ const Single = ({ item }) => {
 					<motion.div className="textContainer" style={{ y }}>
 						<h2>{item.title}</h2>
 						<p>{item.description}</p>
-						<motion.button
-							onClick={handleClick}
-							whileHover={{ scale: 1.1 }}
-							whileTap={{ scale: 0.9 }}
-						>
-							Demo
-						</motion.button>
+						<button onClick={handleClick}>Demo</button>
 					</motion.div>
 				</div>
 			</div>
@@ -98,7 +91,7 @@ const Portfolio = () => {
 	return (
 		<div className="portfolio" ref={ref}>
 			<div className="progress">
-				<h1>Featured Projects</h1>
+				<h1>Featured Works</h1>
 				<motion.div
 					style={{ scaleX }}
 					className="progressBar"

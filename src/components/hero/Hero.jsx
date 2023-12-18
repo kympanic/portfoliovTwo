@@ -42,6 +42,7 @@ const handleClick = () => {
 	console.log("GitHub button clicked");
 	window.open("https://github.com/kympanic", "_blank");
 };
+
 const Hero = () => {
 	return (
 		<div className="hero">
