@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import "./contact.scss";
 import { motion, useInView } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
 const Contact = () => {
 	const ref = useRef();
@@ -9,6 +10,9 @@ const Contact = () => {
 	const [error, setError] = useState(false);
 	const [success, setSuccess] = useState(false);
 	const isInView = useInView(ref, { margin: "-100px" });
+	const [name, setName] = useState("");
+	const [email, setEmail] = useState("");
+	const [message, setMessage] = useState("");
 
 	const sendEmail = (e) => {
 		e.preventDefault();
@@ -23,9 +27,14 @@ const Contact = () => {
 			.then(
 				(result) => {
 					setSuccess(true);
+					setName("");
+					setEmail("");
+					setMessage("");
+					toast.success("Sent successfully!");
 				},
 				(error) => {
 					setError(true);
+					toast.error("Please fill out all fields");
 				}
 			);
 	};
@@ -93,17 +102,25 @@ const Contact = () => {
 						required
 						placeholder="Name"
 						name="name"
+						value={name}
+						onChange={(e) => setName(e.target.value)}
 					/>
 					<input
 						type="email"
 						required
 						placeholder="Email"
 						email="email"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
 					/>
-					<textarea rows={8} placeholder="Message" name="message" />
+					<textarea
+						rows={8}
+						placeholder="Message"
+						name="message"
+						value={message}
+						onChange={(e) => setMessage(e.target.value)}
+					/>
 					<button>Submit</button>
-					{error && "Error"}
-					{success && "Success"}
 				</motion.form>
 			</div>
 		</motion.div>
